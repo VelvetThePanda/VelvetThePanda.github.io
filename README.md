@@ -1,7 +1,7 @@
 # Velvet's Text-Based Adventure game.
 
 
-## Quick insight: VTAG Started as a full-fledged game...attempt. I didn't really know what I was doing, and everything got jumbled up really, really quickly. That project has been disbanded. Why did I keep the acronym despite it being an API? Dunno. I'm not creative enough to think of something better. 
+### Quick insight: VTAG Started as a full-fledged game...attempt. I didn't really know what I was doing, and everything got jumbled up really, really quickly. That project has been disbanded. Why did I keep the acronym despite it being an API? Dunno. I'm not creative enough to think of something better. 
 
 
 
@@ -22,3 +22,15 @@ These options are `DisableClose`, `DisableMax`, `DisableMin`, and `DisableResize
 
 They're somewhat straight-forward, but if you don't understand, DisableClose will disable the window's close button. This is good if you need to ensure the console is not shut down before some save is created or the likes. 
 
+Disable Max will disable the maximize button, preventing the window from being jumbled if it's un-maximized. DisableMin is somewhat of a less useful option here, but it has been obvserved that the ConsoleBuffer can become ruined when minimizing and reopening the window. DisableResize does as it says on the tin, however this one is likely the most useful, as having the window a fixed size ensures that text is displayed properly.
+
+
+
+## Display Areas
+    Display areas provide a couple utilities for you, the dev. Display Areas are sectioned off portions of the screen that can be independently written to, as well as cleared independently.
+    By defualt, the Display Areas use double boxes that connect nicely in any intended way. 
+
+### Code example:
+```cs
+            DisplayArea _DisplayArea = DisplayAreaManager.CreateDisplay(new Point(x, y), new Size(w, h));
+```
