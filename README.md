@@ -32,5 +32,14 @@ Disable Max will disable the maximize button, preventing the window from being j
 
 ### Code example:
 ```cs
-            DisplayArea _DisplayArea = DisplayAreaManager.CreateDisplay(new Point(x, y), new Size(w, h));
+DisplayArea _DisplayArea = DisplayAreaManager.CreateDisplay(new Point(x, y), new Size(w, h));
 ```
+DisplayAreaManager is another class, which is documented below.
+This method will create a box at a zero-based location in relation to the console. 0,0 will be the upper left. 
+Providing a box larger than the console buffer will throw a `ArgumentOutOfRangeException`, which is something that is not internally handled by the API. Boxes larger than the buffer would calse them to overlap on a new line, which is not ideal. Please ensure your areas do not overlap the console buffer. The console buffer's size is initialized to the screen size when `Display.InitializeDisplay();` is called.
+
+Display Areas provide some other niceties, too. For that classic DOS-style game, where the letters slowly emerge across the screen, the display area class provides a few methods to use.
+`SlowType(string Text, int Delay)` and `SlowType(string Text, ConsoleColor color, int Delay, params HighlightedStrings)`
+
+The first method takes in a string, and a delay, and will type each character out one by one, using Thread.Sleep() between them with the specified delay.  
+The second method however, allows you to spice your text up with some highlighting. It functions similar to the regular `SlowType()`, with the main difference being it's paremeters. It takes a `ConsoleColor`, along with the strings 
