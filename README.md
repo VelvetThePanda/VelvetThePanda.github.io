@@ -27,8 +27,8 @@ Disable Max will disable the maximize button, preventing the window from being j
 
 
 ## Display Areas
-    Display areas provide a couple utilities for you, the dev. Display Areas are sectioned off portions of the screen that can be independently written to, as well as cleared independently.
-    By defualt, the Display Areas use double boxes that connect nicely in any intended way. 
+Display areas provide a couple utilities for you, the dev. Display Areas are sectioned off portions of the screen that can be independently written to, as well as cleared independently.
+By defualt, the Display Areas use double boxes that connect nicely in any intended way. 
 
 ### Code example:
 ```cs
